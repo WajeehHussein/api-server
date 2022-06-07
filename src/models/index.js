@@ -13,6 +13,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 // require other models
 const food = require('./food');
 const clothes = require('./clothes')
+const collection = require('./collection-calss')
 
 let sequelizeOptions =
     process.env.NODE_ENV === "production"
@@ -30,9 +31,11 @@ let sequelizeOptions =
 
 let sequelize = new Sequelize(POSTGRES_URI, sequelizeOptions);
 
+const foodCollection = new collection(food(sequelize, DataTypes));
+const clothesCollection = new collection(clothes(sequelize, DataTypes));
 
 module.exports = {
     db: sequelize,
-    Food: food(sequelize, DataTypes),
-    Clothes: clothes(sequelize, DataTypes)
+    Food: foodCollection,
+    Clothes: clothesCollection,
 };
