@@ -8,12 +8,12 @@ const express = require('express');
 const app = express();
 
 const foodRotes = require('./routes/food')
-// const clothesRouter = require('./routes/clothes')
+const clothesRouter = require('./routes/clothes')
 const notFound = require('./error-handlers/404');
 const serverError = require('./error-handlers/500')
 
 app.use(express.json());
-// app.use(clothesRouter);
+app.use(clothesRouter);
 app.use(foodRotes);
 app.use('*', notFound);
 app.use(serverError);
