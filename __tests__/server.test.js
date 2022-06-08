@@ -33,7 +33,7 @@ describe('', () => {
         expect(res.status).toBe(200)
     })
     test('get a data ( one )', async () => {
-        const res = await mockRequest.get('/food/1');
+        const res = await mockRequest.get('/clothes/1');
         expect(res.status).toBe(200)
     })
     test('update a data ( one )', async () => {
@@ -41,7 +41,7 @@ describe('', () => {
         expect(res.status).toBe(201)
     })
     test('delete a data ( one )', async () => {
-        const res = await mockRequest.delete('/food/1');
+        const res = await mockRequest.delete('/clothes/1');
         expect(res.status).toBe(204)
     })
 })
