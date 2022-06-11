@@ -1,6 +1,6 @@
 'use strict';
 require('dotenv').config()
-let PORT = process.env.PORT || 3001
+let PORT = process.env.PORT
 
 const server = require('./src/server')
 
